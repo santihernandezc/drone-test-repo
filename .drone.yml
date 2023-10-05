@@ -1,10 +1,10 @@
 kind: pipeline
+type: docker
 name: default
 
 steps:
-- name: test1
-  image: debian:buster
+- name: greeting
+  image: golang:1.12
   commands:
-  - sleep 5
-  - echo hello
-  - echo world
+  - go build
+  - go test
